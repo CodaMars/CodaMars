@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CodaMars</title>
+    <meta name="theme-color" content="#0b0f1a" />
+    <meta name="description" content="CodaMars explores bold ideas and turns them into thoughtful software, platforms, and games." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta property="og:title" content="CodaMars" />
+    <meta property="og:description" content="Every great future begins with a dream." />
+    <meta property="og:image" content="https://codamars.com/logo.png" />
 
     <style>
       :root {
@@ -36,15 +43,32 @@
         padding: 32px 20px 56px;
       }
       .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand-mark {
+        display: block;
+        width: 92px;
+        height: auto;
+      }
+      .brand-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .brand-name {
         font-weight: 700;
         letter-spacing: 0.4px;
         font-size: 22px;
-        line-height: 20px;
+        line-height: 1.1;
       }
-       .brand i{
-        font-weight: normal;
+      .brand-tagline {
         letter-spacing: 0.4px;
-        font-size: 14px;
+        font-size: 12px;
+        font-style: italic;
+        color: var(--muted);
+        line-height: 1.25;
       }
       .navlinks {
         display: flex;
@@ -96,16 +120,98 @@
         margin-bottom: 0;
       }
 
+      .projects {
+        margin-top: 36px;
+      }
+      .projects > h2 {
+        margin: 0 0 16px;
+        color: var(--muted);
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+      }
+      .project-card {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr);
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.03);
+        transition: border-color 150ms ease, transform 150ms ease;
+      }
+      .project-card:hover,
+      .project-card:focus-visible {
+        border-color: rgba(244, 246, 255, 0.4);
+        transform: translateY(-2px);
+      }
+      .project-card:focus-visible {
+        outline: 2px solid #ff8271;
+        outline-offset: 3px;
+      }
+      .project-art {
+        display: grid;
+        min-height: 210px;
+        place-items: center;
+        padding: 28px;
+        background: #fffaf2;
+      }
+      .project-logo {
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+      }
+      .project-copy {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 28px;
+      }
+      .project-copy h3 {
+        margin: 0 0 10px;
+        font-size: 25px;
+        line-height: 1.2;
+      }
+      .project-copy p {
+        margin: 0 0 24px;
+        color: var(--muted);
+        font-size: 16px;
+      }
+      .project-link-label {
+        margin-top: auto;
+        color: #ff9485;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
       .footer {
         margin-top: 36px;
         padding-top: 18px;
         border-top: 1px solid var(--line);
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
         flex-wrap: wrap;
-        gap: 12px;
+        gap: 16px;
         color: var(--muted);
         font-size: 13px;
+      }
+      .footer-identity {
+        display: grid;
+        gap: 4px;
+      }
+      .footer-legal {
+        font-size: 12px;
+      }
+      .footer-origin {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .footer-flag {
+        font-size: 18px;
+        line-height: 1;
       }
 
       .nav {
@@ -135,23 +241,36 @@
         margin: 18px 0;
       }
 
-      @media (max-width: 520px) {
+      @media (max-width: 700px) {
         .nav {
           flex-direction: column;
           align-items: flex-start;
+        }
+        .project-card {
+          grid-template-columns: 1fr;
+        }
+        .project-art {
+          min-height: 170px;
         }
       }
     </style>
   </head>
 
   <body>
-    <div class="container">
+    <div class="container" id="top">
       <header class="nav">
-        <div class="brand">CodaMars<br><i>Every great future begins with a dream.</i></div>
+        <a class="brand" href="#top" aria-label="CodaMars, back to top">
+          <img class="brand-mark" src="/logo.png" alt="" width="1706" height="638" />
+          <span class="brand-copy">
+            <span class="brand-name">CodaMars</span>
+            <span class="brand-tagline">Every great future begins with a dream.</span>
+          </span>
+        </a>
         <nav class="navlinks" aria-label="Primary">
           <a href="#story">Story</a>
           <a href="#meaning">Meaning</a>
           <a href="#mindset">Mindset</a>
+          <a href="#projects">Projects</a>
         </nav>
       </header>
 
@@ -231,9 +350,33 @@
         </div>
       </section>
 
-      <footer class="footer" aria-label="Footer">
-        <div>© <span id="year"></span> CodaMars</div>
-        <div>Built for SaaS, games, and whatever comes next.</div>
+      <section class="projects" id="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title">Projects</h2>
+        <a class="project-card" href="https://competitorflow.com/en">
+          <div class="project-art">
+            <img class="project-logo" src="/projects/competitorflow-logo.svg" alt="" width="2060" height="460" loading="lazy" />
+          </div>
+          <div class="project-copy">
+            <h3>CompetitorFlow</h3>
+            <p>
+              Competitive intelligence that tracks public competitor moves and
+              turns them into clear, evidence-backed insights for product and
+              market decisions.
+            </p>
+            <span class="project-link-label">Visit CompetitorFlow ↗</span>
+          </div>
+        </a>
+      </section>
+
+      <footer class="footer" id="footer" aria-label="Footer">
+        <div class="footer-identity">
+          <div>© <span id="year"></span> CodaMars</div>
+          <div class="footer-legal">CODAMARS - CNPJ 64.302.764/0001-14</div>
+        </div>
+        <div class="footer-origin">
+          <span class="footer-flag" role="img" aria-label="Flag of Brazil">🇧🇷</span>
+          <span>Made with love in Brazil</span>
+        </div>
       </footer>
     </div>
 

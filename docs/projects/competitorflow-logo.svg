@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2060" height="460" viewBox="0 0 2060 460" role="img" aria-labelledby="title">
+  <title id="title">CompetitorFlow</title>
+  <defs>
+    <style>
+      .wordmark {
+        font-family: Optima, Candara, "Avenir Next", "Segoe UI", Arial, sans-serif;
+        font-size: 196px;
+        font-weight: 600;
+        letter-spacing: 0;
+      }
+    </style>
+  </defs>
+  <g transform="translate(56 28)">
+    <path d="M88 258C126 179 184 304 234 199c23-48 46-70 74-57" fill="none" stroke="#176C73" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M98 145c49-41 113-43 184-10" fill="none" stroke="#B85C38" stroke-width="20" stroke-linecap="round" stroke-dasharray="1 46"/>
+    <circle cx="88" cy="258" r="34" fill="#FFFAF2" stroke="#B85C38" stroke-width="20"/>
+    <circle cx="195" cy="248" r="31" fill="#FFFAF2" stroke="#59705F" stroke-width="20"/>
+    <circle cx="234" cy="199" r="32" fill="#FFFAF2" stroke="#176C73" stroke-width="20"/>
+    <circle cx="308" cy="142" r="38" fill="#10201D" stroke="#FFFAF2" stroke-width="16"/>
+  </g>
+  <text x="536" y="300" class="wordmark" fill="#10201D">CompetitorFlow</text>
+</svg>
