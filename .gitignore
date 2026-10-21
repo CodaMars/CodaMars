@@ -1,0 +1,7 @@
+.DS_Store
+firebase-debug.log
+/tmp/
+
+# Original INPI documents contain personal details. Publish only inpi/public/.
+/inpi/29409172366340897.pdf
+/inpi/Pag.pdf
